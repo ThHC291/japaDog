@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Person } from '../shared/person';
+import { PersonService } from '../shared/person.service';
 
 @Component({
   selector: 'app-person-list',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonListPage implements OnInit {
 
-  constructor() { }
+  listaPessoas: Person[];
+
+  constructor(
+    private personService: PersonService
+  ) { }
 
   ngOnInit() {
+    this.listaPessoas =  this.personService.getPessoas();
   }
 
 }

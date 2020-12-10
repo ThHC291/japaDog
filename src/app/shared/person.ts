@@ -4,6 +4,6 @@ export class Person {
     nascimento: Date;
     cpf: string;
     endereco: string;
-    telefone: string;
+    telefone: number;
 
 }

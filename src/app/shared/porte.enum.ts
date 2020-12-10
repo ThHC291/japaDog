@@ -1,5 +1,5 @@
 export enum Porte {
-    PEQUENO,
-    MEDIO,
-    GRANDE
+    PEQUENO = "Pequeno",
+    MEDIO = "Médio",
+    GRANDE = "Grande"
 }
