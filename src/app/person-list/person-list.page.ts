@@ -16,7 +16,19 @@ export class PersonListPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.listar();
+  }
+
+  listar(){
     this.listaPessoas =  this.personService.getPessoas();
+  }
+
+  edit(person: Person){
+
+  }
+  delete(person: Person){
+    this.personService.delete(person);
+    this.listar();
   }
 
 }

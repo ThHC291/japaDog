@@ -23,4 +23,9 @@ export class PersonService {
   public getPessoas(){
     return this.pessoas;
   }
+  
+  delete(person: Person){
+    this.pessoas = this.pessoas.filter(p => p.id !== person.id );
+    console.log(this.pessoas);
+  }
 }
