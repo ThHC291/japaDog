@@ -1,7 +1,7 @@
 export class Person {
     id: number;
     nome: string;
-    nascimento: Date;
+    nascimento: Date | string;
     cpf: string;
     endereco: string;
     telefone: number;

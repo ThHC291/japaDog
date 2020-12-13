@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Person } from '../shared/person';
 import { PersonService } from '../shared/person.service';
 
@@ -12,10 +13,14 @@ export class PersonListPage implements OnInit {
   listaPessoas: Person[];
 
   constructor(
-    private personService: PersonService
+    private personService: PersonService,
+    private router: Router
   ) { }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter(){
     this.listar();
   }
 
@@ -24,7 +29,7 @@ export class PersonListPage implements OnInit {
   }
 
   edit(person: Person){
-
+    this.router.navigate(["person-register", person.id]);
   }
   delete(person: Person){
     this.personService.delete(person);

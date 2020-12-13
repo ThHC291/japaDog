@@ -1,9 +1,44 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>person-register</ion-title>
+    <ion-title>REGISTRO DE PESSOAS CADASTRADAS</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label >Código:</ion-label>
+    <ion-input type = "number" [(ngModel)] = "person.id"> </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Nome:</ion-label>
+    <ion-input [(ngModel)] = "person.nome" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Data de Nascimento:</ion-label>
+    <ion-datetime style= " width: 88.9%;" [(ngModel)] = "person.nascimento" displayFormat="DD/MM/YYYY" cancelText="Cancelar" doneText="Selecionar"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>CPF:</ion-label>
+    <ion-input  [(ngModel)] = "person.cpf"> </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Endereço:</ion-label>
+    <ion-input  [(ngModel)] = "person.endereco"> </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Telefone:</ion-label>
+    <ion-input  [(ngModel)] = "person.telefone"> </ion-input>
+  </ion-item>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click) = "salvar()">
+      <ion-icon name="save-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>

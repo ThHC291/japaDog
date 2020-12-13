@@ -15,6 +15,7 @@ const routes: Routes = [
     path: 'animal-register',
     loadChildren: () => import('./animal-register/animal-register.module').then( m => m.AnimalRegisterPageModule)
   },
+  
   {
     path: 'main-page',
     loadChildren: () => import('./main-page/main-page.module').then( m => m.MainPagePageModule)
@@ -25,6 +26,10 @@ const routes: Routes = [
   },
   {
     path: 'person-register',
+    loadChildren: () => import('./person-register/person-register.module').then( m => m.PersonRegisterPageModule)
+  },
+  {
+    path: 'person-register/:id',
     loadChildren: () => import('./person-register/person-register.module').then( m => m.PersonRegisterPageModule)
   }
 ];
