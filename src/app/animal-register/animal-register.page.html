@@ -1,9 +1,60 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>animal-register</ion-title>
+    <ion-title>REGISTRO DE ANIMAL</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label >Código:</ion-label>
+    <ion-input type = "number" [(ngModel)] = "animal.id"> </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Nome:</ion-label>
+    <ion-input [(ngModel)] = "animal.nome" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Tipo</ion-label>
+    <ion-select [(ngModel)]="animal.tipo" multiple="false" placeholder="Selecione o tipo">
+      <ion-select-option *ngFor="let tipo of tipos" [value]="tipo.valor">
+        {{tipo.descricao}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Local:</ion-label>
+    <ion-select [(ngModel)]="animal.local" multiple="false" placeholder="Selecione o local">
+      <ion-select-option *ngFor="let local of locais" [value]="local.valor">
+        {{local.descricao}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Porte:</ion-label>
+    <ion-select [(ngModel)]="animal.porte" multiple="false" placeholder="Selecione o porte">
+      <ion-select-option *ngFor="let porte of portes" [value]="porte.valor">
+        {{porte.descricao}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Sexo:</ion-label>
+    <ion-select [(ngModel)]="animal.sexo" multiple="false" placeholder="Selecione o sexo">
+      <ion-select-option *ngFor="let sexo of sexos" [value]="sexo.valor">
+        {{sexo.descricao}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click) = "salvar()">
+      <ion-icon name="save-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>

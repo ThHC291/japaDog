@@ -5,5 +5,4 @@ export class Person {
     cpf: string;
     endereco: string;
     telefone: number;
-
 }

@@ -26,7 +26,6 @@ export class PersonService {
   
   delete(person: Person){
     this.pessoas = this.pessoas.filter(p => p.id !== person.id );
-    console.log(this.pessoas);
   }
 
   salvar(person: Person){
@@ -36,8 +35,6 @@ export class PersonService {
    } else {
      this.pessoas[index] = {...person}
    }
-   
-   console.log(this.pessoas);
   }
 
   getId(){

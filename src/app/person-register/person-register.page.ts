@@ -32,7 +32,6 @@ export class PersonRegisterPage implements OnInit {
   }
 
   salvar(){
-    console.log(this.person);
     this.personService.salvar(this.person);
     this.router.navigate(["person-list"])
   }
